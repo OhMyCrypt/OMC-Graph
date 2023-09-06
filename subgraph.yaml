@@ -1,0 +1,36 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ETHUSDCMarket
+    network: base
+    source:
+      address: "0x2C36d3b4dd50D6A08c615c52eF06E2e3402fF3ED"
+      abi: ETHUSDCMarket
+      startBlock: 3609887
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OrderCanceled
+        - OrderPlaced
+        - Paused
+        - TradeExecuted
+        - Unpaused
+      abis:
+        - name: ETHUSDCMarket
+          file: ./abis/ETHUSDCMarket.json
+      eventHandlers:
+        - event: OrderCanceled(indexed uint256,indexed address,address,address,uint256,uint256,uint256)
+          handler: handleOrderCanceled
+        - event: OrderPlaced(uint256,bool,indexed address,address,address,uint256,uint256,uint256,bool)
+          handler: handleOrderPlaced
+        - event: Paused(address)
+          handler: handlePaused
+        - event: TradeExecuted(indexed address,indexed address,indexed address,address,uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleTradeExecuted
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/ethusdc-market.ts

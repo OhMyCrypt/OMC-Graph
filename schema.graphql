@@ -1,0 +1,62 @@
+type OrderCanceled @entity(immutable: true) {
+  id: Bytes!
+  ETHUSDCMarket_id: BigInt! # uint256
+  td: Bytes! # address
+  t1: Bytes! # address
+  t2: Bytes! # address
+  t1a: BigInt! # uint256
+  t2a: BigInt! # uint256
+  timestamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderPlaced @entity(immutable: true) {
+  id: Bytes!
+  ETHUSDCMarket_id: BigInt! # uint256
+  isActive: Boolean! # bool
+  td: Bytes! # address
+  t1: Bytes! # address
+  t2: Bytes! # address
+  t1a: BigInt! # uint256
+  t2a: BigInt! # uint256
+  p: BigInt! # uint256
+  oT: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Paused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TradeExecuted @entity(immutable: true) {
+  id: Bytes!
+  buyer: Bytes! # address
+  seller: Bytes! # address
+  t1: Bytes! # address
+  t2: Bytes! # address
+  t1a: BigInt! # uint256
+  t2a: BigInt! # uint256
+  p: BigInt! # uint256
+  timestamp: BigInt! # uint256
+  buyOrderID: BigInt! # uint256
+  sellOrderID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Unpaused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
