@@ -5,7 +5,7 @@ import {
   Paused as PausedEvent,
   TradeExecuted as TradeExecutedEvent,
   Unpaused as UnpausedEvent
-} from "../generated/ETHUSDCMarket/ETHUSDCMarket"
+} from "../generated/USDCDAIMarket/USDCDAIMarket"
 import {
   ActiveOrder,
   OrderCanceled,

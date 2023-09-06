@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: ETHUSDCMarket
@@ -21,7 +21,7 @@ dataSources:
         - Unpaused
       abis:
         - name: ETHUSDCMarket
-          file: ./abis/ETHUSDCMarket.json
+          file: ETHUSDCMarket/abis/ETHUSDCMarket.json
       eventHandlers:
         - event: OrderCanceled(indexed uint256,indexed
             address,address,address,uint256,uint256,uint256)
@@ -36,7 +36,7 @@ dataSources:
           handler: handleTradeExecuted
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/ethusdc-market.ts
+      file: ETHUSDCMarket/ETHUSDCMarket.wasm
   - kind: ethereum
     name: USDCDAIMarket
     network: base
@@ -56,7 +56,7 @@ dataSources:
         - USDCDAIMarketUnpaused
       abis:
         - name: USDCDAIMarket
-          file: ./abis/USDCDAIMarket.json
+          file: USDCDAIMarket/abis/USDCDAIMarket.json
       eventHandlers:
         - event: OrderCanceled(indexed uint256,indexed
             address,address,address,uint256,uint256,uint256)
@@ -71,7 +71,7 @@ dataSources:
           handler: handleTradeExecuted
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/usdcdai-market.ts
+      file: USDCDAIMarket/USDCDAIMarket.wasm
   - kind: ethereum
     name: cbETHETHMarket
     network: base
@@ -91,7 +91,7 @@ dataSources:
         - cbETHETHMarketUnpaused
       abis:
         - name: cbETHETHMarket
-          file: ./abis/cbETHETHMarket.json
+          file: cbETHETHMarket/abis/cbETHETHMarket.json
       eventHandlers:
         - event: OrderCanceled(indexed uint256,indexed
             address,address,address,uint256,uint256,uint256)
@@ -106,7 +106,7 @@ dataSources:
           handler: handleTradeExecuted
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/cb-etheth-market.ts
+      file: cbETHETHMarket/cbETHETHMarket.wasm
   - kind: ethereum
     name: agEURUSDCMarket
     network: base
@@ -126,7 +126,7 @@ dataSources:
         - agEURUSDCMarketUnpaused
       abis:
         - name: agEURUSDCMarket
-          file: ./abis/agEURUSDCMarket.json
+          file: agEURUSDCMarket/abis/agEURUSDCMarket.json
       eventHandlers:
         - event: OrderCanceled(indexed uint256,indexed
             address,address,address,uint256,uint256,uint256)
@@ -141,7 +141,7 @@ dataSources:
           handler: handleTradeExecuted
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/ag-eurusdc-market.ts
+      file: agEURUSDCMarket/agEURUSDCMarket.wasm
   - kind: ethereum
     name: tBTCUSDCMarket
     network: base
@@ -161,7 +161,7 @@ dataSources:
         - tBTCUSDCMarketUnpaused
       abis:
         - name: tBTCUSDCMarket
-          file: ./abis/tBTCUSDCMarket.json
+          file: tBTCUSDCMarket/abis/tBTCUSDCMarket.json
       eventHandlers:
         - event: OrderCanceled(indexed uint256,indexed
             address,address,address,uint256,uint256,uint256)
@@ -176,4 +176,4 @@ dataSources:
           handler: handleTradeExecuted
         - event: Unpaused(address)
           handler: handleUnpaused
-      file: ./src/t-btcusdc-market.ts
+      file: tBTCUSDCMarket/tBTCUSDCMarket.wasm

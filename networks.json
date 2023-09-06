@@ -3,6 +3,18 @@
     "ETHUSDCMarket": {
       "address": "0x2C36d3b4dd50D6A08c615c52eF06E2e3402fF3ED",
       "startBlock": 3609887
+    },
+    "USDCDAIMarket": {
+      "address": "0x73cc0e5a8560680E8A757aF16D640a5863EC27dB"
+    },
+    "cbETHETHMarket": {
+      "address": "0x8Ec21855Ff90123aC9091A0Df7f1c14A819c4424"
+    },
+    "agEURUSDCMarket": {
+      "address": "0x73e83F5150231D1a011C5E5625879Ff986B882B8"
+    },
+    "tBTCUSDCMarket": {
+      "address": "0xF7360348F187Fa51b23c8E4568F1C42Bc5936B87"
     }
   }
 }
